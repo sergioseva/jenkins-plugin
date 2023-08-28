@@ -23,8 +23,8 @@ pipeline {
         stage('Policy') {
             steps {
                 nexusPolicyEvaluation advancedProperties: '', enableDebugLogging: true,
-                    failBuildOnNetworkError: false, iqApplication: selectedApplication('jcava-test-app2'),
-                    iqScanPatterns: [[scanPattern: 'container:jboss/keycloak:7.0.0']], iqStage: 'build',
+                    failBuildOnNetworkError: false, iqApplication: selectedApplication('5'),
+                    iqScanPatterns: [[]], iqStage: 'build',
                     jobCredentialsId: ''
             }
         }
