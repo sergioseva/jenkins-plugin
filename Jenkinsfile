@@ -13,11 +13,11 @@ pipeline {
              git branch: "main", url: 'https://github.com/sergioseva/jenkins-plugin.git'
              sh 'mvn clean install'
            }
-           post {
-             success {
-               junit 'target/surefire-reports/**/*.xml'
-             }
-           }
+           //post {
+           //  success {
+           //    junit 'target/surefire-reports/**/*.xml'
+           //  }
+           //}
          }
 
         stage('Policy') {
