@@ -20,8 +20,10 @@ pipeline {
            //}
          }
 
-      stage('Policy Eval') {
-        nexusPolicyEvaluation iqApplication: selectedApplication('5'), iqStage: 'build', iqScanPatterns: [[scanPattern: 'pom.xml'],[scanPattern: '**/*.jar']]
-      }
+        stage('Policy') {
+            steps {
+                nexusPolicyEvaluation  iqApplication: selectedApplication('local-app'), iqStage: 'build', iqScanPatterns: [[scanPattern: 'pom.xml'],[scanPattern: '**/*.jar']]
+            }
+        }
     }
 }
