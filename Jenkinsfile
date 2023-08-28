@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven'
-        jdk 'jdk'
-        git 'git'
+        maven 'maven 3.9.4'
+        jdk 'jdk8'
+        git 'Default'
     }
 
     stages {
