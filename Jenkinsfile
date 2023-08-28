@@ -20,13 +20,8 @@ pipeline {
            //}
          }
 
-        stage('Policy') {
-            steps {
-                nexusPolicyEvaluation advancedProperties: '', enableDebugLogging: true,
-                    failBuildOnNetworkError: false, iqApplication: selectedApplication('5'),
-                    iqScanPatterns: [[]], iqStage: 'build',
-                    jobCredentialsId: ''
-            }
-        }
+      stage('Policy Eval') {
+        nexusPolicyEvaluation iqApplication: selectedApplication('5'), iqStage: 'build', iqScanPatterns: [[scanPattern: 'pom.xml'],[scanPattern: '**/*.jar']]
+      }
     }
 }
